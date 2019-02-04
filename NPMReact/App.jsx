@@ -3,8 +3,8 @@ import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 
 class App extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             data: [
                 {
@@ -27,24 +27,37 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Header name="This is my header" />
-                <table>
+                <Header headerName={this.props.headerName} />
+                <table >
+                    <thead>
+                        <tr>
+                            <th> Serial Number</th>
+                            <th>Person ID</th>
+                            <th>Person Name</th>
+                            <th>Designation</th>
+                        </tr>
+                        </thead>
                     <tbody>
-                        {this.state.data.map((person, i) => <TableRow key={i} data={person} />)}
+                        {this.state.data.map((person, i) => <TableRow index={i} key={i} per={person} />)}
                     </tbody>
                 </table>
-                <Footer name="this is my footer" />
+                <Footer footerName={this.props.footerName} />
             </div>
         );
     }
+}
+App.defaultProps = {
+    headerName: "Header from props...",
+    footerName: "Footer from props..."
 }
 class TableRow extends React.Component {
     render() {
         return (
             <tr>
-                <td>{this.props.data.personID}</td>
-                <td>{this.props.data.Name}</td>
-                <td>{this.props.data.Designation}</td>
+                <td>{this.props.index}</td>
+                <td>{this.props.per.personID}</td>
+                <td>{this.props.per.Name}</td>
+                <td>{this.props.per.Designation}</td>
             </tr>
         );
     }
