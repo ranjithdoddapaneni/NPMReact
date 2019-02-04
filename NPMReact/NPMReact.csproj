@@ -7248,6 +7248,8 @@
     <Content Include="node_modules\yargs\lib\validation.js" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
+    <Content Include="ParentChildEvent.jsx" />
+    <Content Include="StateMethods.jsx" />
     <Content Include="webpack.config.js" />
     <Content Include="node_modules\.bin\acorn" />
     <Content Include="node_modules\.bin\acorn.cmd" />

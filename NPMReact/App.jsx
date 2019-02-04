@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
+import StateMethods from './Statemethods.jsx';
+import ParentChildEvent from './ParentChildEvent.jsx';
 
 class App extends React.Component {
     constructor(props) {
@@ -41,6 +43,8 @@ class App extends React.Component {
                         {this.state.data.map((person, i) => <TableRow index={i} key={i} per={person} />)}
                     </tbody>
                 </table>
+                <StateMethods />
+                <ParentChildEvent />
                 <Footer footerName={this.props.footerName} />
             </div>
         );
